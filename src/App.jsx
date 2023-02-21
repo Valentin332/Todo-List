@@ -48,7 +48,7 @@ document.getElementById("todo--input").value = ""
 function handleAdd(){
   if(newToDo !== ""){
 const fecha = new Date();
-const fechaDatos = `${dias[fecha.getDay()]} ${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()} `
+const fechaDatos = `${dias[fecha.getDay() - 1 ]} ${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()} `
 
     const newItem = {
     id: nanoid(),
@@ -80,13 +80,16 @@ const todoRender = toDoList ? toDoList.map((todo, index) => {
 }) : "";
 
  return (
-  <div className='main'>
+  <div className='main container'>
   <h1 className="main--header">TO DO LIST</h1>
-    <form >
-  <label htmlFor="#todo--input">Add new task</label>
-  <input   onChange={update}type="text" id="todo--input" ></input>
-  <button  onClick={ editing ? handleEdit : handleAdd}>{editing ? "Submit" : "Add"}</button>
+    <form className='main--form mb-3'>
+    <div className="form-floating">
+    <input className='form-control form-control-sm'   onChange={update}type="text" id="todo--input" placeholder='Add Task' ></input>
+    <label className='form-label' htmlFor="#todo--input">Add new task</label>
+    </div>
+    <button className='mt-1'  onClick={ editing ? handleEdit : handleAdd}>{editing ? "Submit" : "Add"}</button>
 </form>
+
    {todoRender}
   
   </div>

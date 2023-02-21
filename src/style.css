@@ -3,13 +3,16 @@
     text-align: center;
     margin: auto;
 }
-
+.main--form {
+    width: 50%;
+    margin: auto;
+}
 
 .todo--item{
     margin: auto;
    border: 1px solid black;
     color:black;
-     min-width: 30%;
+     min-width: 50%;
      max-width: fit-content;
     margin-bottom: 1em;
 }
@@ -17,10 +20,6 @@
  label {
     margin-right: 10px;
 }
-
-.button {
-    font-size: 2em;
-    display: inline-block;
-    margin-right: 2px;
-   cursor: pointer;
+ .todo--item > .btn {
+    margin-right: 1em !important
 }
