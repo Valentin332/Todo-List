@@ -8,7 +8,6 @@ import { nanoid } from 'nanoid'
  const [toDoList, setToDoList] = React.useState(JSON.parse(localStorage.getItem("list")) || "")
  const [editing, setEditing] = React.useState(false)
  const dias = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"];
-
  React.useEffect(() => {
  const toDoListJson = JSON.stringify(toDoList);
  toDoListJson && localStorage.setItem("list", toDoListJson)

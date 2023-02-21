@@ -8,7 +8,7 @@ return (
 <p>Fecha de creación : {props.fechaDeCreacion}</p>
 <FontAwesomeIcon className="button button-delete" onClick={props.deleteFunc} icon= {faXmarkSquare} />
 <FontAwesomeIcon className="button button-checked" onClick={props.deleteFunc} icon= {faCheckSquare} />
-<button type="button" onClick={props.editFunc} className="button button-edit">Edit</button>
+<button type="button" onClick={props.editFunc} className="btn btn-primary">Edit</button>
 </div>
 
 )
