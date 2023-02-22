@@ -14,6 +14,7 @@ import { nanoid } from 'nanoid'
  toDoListJson && localStorage.setItem("list", toDoListJson)
 },[toDoList]);
 
+
 function deleteItem(event, itemId){
   event.stopPropagation();
   setToDoList( prevList => {
@@ -48,17 +49,17 @@ function handleEdit(){
 
 function handleAdd(){
   if(newToDo  !== ""){
-const fecha = new Date();
-const fechaDatos = `${dias[fecha.getDay() - 1 ]} ${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()} `
+const fechaDeCreacion = new Date();
+const datosFechaCreacion = `${dias[fechaDeCreacion.getDay() - 1 ]} ${fechaDeCreacion.getDate()}/${fechaDeCreacion.getMonth() + 1}/${fechaDeCreacion.getFullYear()} `
 const datosFechaExp = document.querySelector("#fechaExp");
 const datosHoraExp = document.querySelector("#horaExp");
     const newItem = {
     id: nanoid(),
     value: newToDo,
     checked: false,
-    fecha: fechaDatos,
+    fecha: datosFechaCreacion,
     fechaDeExpiracion: datosFechaExp.value,
-    horaDeExpiracion: datosHoraExp.value
+    horaDeExpiracion: datosHoraExp.value,
     };
   if(!toDoList){
     setToDoList([newItem])
@@ -67,6 +68,7 @@ const datosHoraExp = document.querySelector("#horaExp");
     }
   }
 }
+
 
 const todoRender = toDoList ? toDoList.map((todo, index) => {
   return (
