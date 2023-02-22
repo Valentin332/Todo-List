@@ -1,4 +1,6 @@
-
+body {
+    background-color: hsla(34, 100%, 75%, 0.70) !important;
+}
 .main{
     text-align: center;
     margin: auto;
