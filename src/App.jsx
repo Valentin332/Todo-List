@@ -35,6 +35,7 @@ setToDoList(prevList => {
   const newerList = prevList.map(toDoItem => toDoItem.id !== itemId ? {...toDoItem, checked: false} : {...toDoItem, checked:true})
   return newerList
 })
+inputField.focus()
 }
 
 function handleEdit(){
@@ -88,16 +89,16 @@ const todoRender = toDoList ? toDoList.map((todo, index) => {
  return (
   <div className='main container'>
   <h1 className="main--header">TO DO LIST</h1>
-    <form className='main--form mb-3'>
+    <form className='main--form mb-3 border border-3 border-dark  rounded-5 p-3'>
     <div className="form-floating">
-    <input className='form-control form-control-sm'   onChange={update} type="text" id="tarea" placeholder='Add Task'/>
+    <input className='form-control form-control-sm border-primary border-opacity-50' onFocus={update}  onChange={update} type="text" id="tarea" placeholder='Add Task'/>
     <label className='form-label' htmlFor="#tarea">Añadir nueva tarea</label>
     </div>
     <label htmlFor="#fechaExp">Fecha de Expiración (Opcional)</label>
-    <input className='form-control form-control-sm'   type="date"  name="fechaDeExpiracion" id="fechaExp" /> 
-    <input className='form-control form-control-sm'   type="time" name="horaDeExp" id="horaExp"/>
+    <input className='form-control form-control-sm border-primary border-opacity-50 '   type="date"  name="fechaDeExpiracion" id="fechaExp" /> 
+    <input className='form-control form-control-sm border-primary border-opacity-50 mt-2'   type="time" name="horaDeExp" id="horaExp"/>
     <br/>
-    <button className='mt-1'  onClick={ editing ? handleEdit : handleAdd}>{editing ? "Confirmar" : "Añadir"}</button>
+    <button className='mb-2 btn btn-primary'  onClick={ editing ? handleEdit : handleAdd}>{editing ? "Confirmar" : "Añadir"}</button>
 </form>
 
    {todoRender}
